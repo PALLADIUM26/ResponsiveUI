@@ -1,15 +1,20 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package responsiveui;
+
+import java.awt.Color;
+import java.awt.Dimension;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
 
 /**
  *
  * @author User
  */
 public class MainMenu extends javax.swing.JFrame {
-
+    
+    boolean boolVal = true;
     /**
      * Creates new form MainMenu
      */
@@ -28,15 +33,24 @@ public class MainMenu extends javax.swing.JFrame {
 
         header = new javax.swing.JPanel();
         iconMinMaxClose = new javax.swing.JPanel();
-        btnClose = new javax.swing.JPanel();
-        btnMax = new javax.swing.JPanel();
+        btnCloseArea = new javax.swing.JPanel();
+        btnClose = new javax.swing.JLabel();
+        btnMaxArea = new javax.swing.JPanel();
+        btnMax = new javax.swing.JLabel();
         btnMin = new javax.swing.JPanel();
         menu = new javax.swing.JPanel();
         menuIcon = new javax.swing.JPanel();
+        lineHideMenu = new javax.swing.JPanel();
+        hideMenu = new javax.swing.JPanel();
+        btnHideMenu = new javax.swing.JLabel();
+        lineSetting = new javax.swing.JPanel();
+        setting = new javax.swing.JPanel();
+        btnSetting = new javax.swing.JLabel();
         menuHide = new javax.swing.JPanel();
         dashboard = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         header.setBackground(new java.awt.Color(15, 10, 46));
         header.setPreferredSize(new java.awt.Dimension(800, 50));
@@ -46,15 +60,48 @@ public class MainMenu extends javax.swing.JFrame {
         iconMinMaxClose.setPreferredSize(new java.awt.Dimension(150, 50));
         iconMinMaxClose.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnClose.setBackground(new java.awt.Color(5, 10, 46));
-        btnClose.setPreferredSize(new java.awt.Dimension(50, 50));
-        btnClose.setLayout(new java.awt.BorderLayout());
-        iconMinMaxClose.add(btnClose, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 0, -1, -1));
+        btnCloseArea.setBackground(new java.awt.Color(5, 10, 46));
+        btnCloseArea.setPreferredSize(new java.awt.Dimension(50, 50));
+        btnCloseArea.setLayout(new java.awt.BorderLayout());
 
-        btnMax.setBackground(new java.awt.Color(5, 10, 46));
-        btnMax.setPreferredSize(new java.awt.Dimension(50, 50));
-        btnMax.setLayout(new java.awt.BorderLayout());
-        iconMinMaxClose.add(btnMax, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 0, -1, -1));
+        btnClose.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnClose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/delete_32px.png"))); // NOI18N
+        btnClose.setAlignmentX(0.5F);
+        btnClose.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnCloseMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnCloseMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnCloseMouseExited(evt);
+            }
+        });
+        btnCloseArea.add(btnClose, java.awt.BorderLayout.CENTER);
+
+        iconMinMaxClose.add(btnCloseArea, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 0, -1, -1));
+
+        btnMaxArea.setBackground(new java.awt.Color(5, 10, 46));
+        btnMaxArea.setPreferredSize(new java.awt.Dimension(50, 50));
+        btnMaxArea.setLayout(new java.awt.BorderLayout());
+
+        btnMax.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnMax.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/full_screen_32px.png"))); // NOI18N
+        btnMax.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnMaxMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnMaxMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnMaxMouseExited(evt);
+            }
+        });
+        btnMaxArea.add(btnMax, java.awt.BorderLayout.CENTER);
+
+        iconMinMaxClose.add(btnMaxArea, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 0, -1, -1));
 
         btnMin.setBackground(new java.awt.Color(5, 10, 46));
         btnMin.setPreferredSize(new java.awt.Dimension(50, 50));
@@ -68,19 +115,81 @@ public class MainMenu extends javax.swing.JFrame {
         menu.setPreferredSize(new java.awt.Dimension(270, 450));
         menu.setLayout(new java.awt.BorderLayout());
 
-        menuIcon.setBackground(new java.awt.Color(15, 19, 52));
+        menuIcon.setBackground(new java.awt.Color(15, 10, 46));
         menuIcon.setPreferredSize(new java.awt.Dimension(50, 450));
+        menuIcon.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout menuIconLayout = new javax.swing.GroupLayout(menuIcon);
-        menuIcon.setLayout(menuIconLayout);
-        menuIconLayout.setHorizontalGroup(
-            menuIconLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        lineHideMenu.setBackground(new java.awt.Color(5, 10, 46));
+        lineHideMenu.setPreferredSize(new java.awt.Dimension(50, 5));
+
+        javax.swing.GroupLayout lineHideMenuLayout = new javax.swing.GroupLayout(lineHideMenu);
+        lineHideMenu.setLayout(lineHideMenuLayout);
+        lineHideMenuLayout.setHorizontalGroup(
+            lineHideMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 50, Short.MAX_VALUE)
         );
-        menuIconLayout.setVerticalGroup(
-            menuIconLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 450, Short.MAX_VALUE)
+        lineHideMenuLayout.setVerticalGroup(
+            lineHideMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 5, Short.MAX_VALUE)
         );
+
+        menuIcon.add(lineHideMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, -1));
+
+        hideMenu.setBackground(new java.awt.Color(5, 10, 46));
+        hideMenu.setLayout(new java.awt.BorderLayout());
+
+        btnHideMenu.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnHideMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/back_32px.png"))); // NOI18N
+        btnHideMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnHideMenuMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnHideMenuMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnHideMenuMouseExited(evt);
+            }
+        });
+        hideMenu.add(btnHideMenu, java.awt.BorderLayout.CENTER);
+
+        menuIcon.add(hideMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 5, 50, 50));
+
+        lineSetting.setBackground(new java.awt.Color(5, 10, 46));
+        lineSetting.setPreferredSize(new java.awt.Dimension(50, 5));
+
+        javax.swing.GroupLayout lineSettingLayout = new javax.swing.GroupLayout(lineSetting);
+        lineSetting.setLayout(lineSettingLayout);
+        lineSettingLayout.setHorizontalGroup(
+            lineSettingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 50, Short.MAX_VALUE)
+        );
+        lineSettingLayout.setVerticalGroup(
+            lineSettingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 5, Short.MAX_VALUE)
+        );
+
+        menuIcon.add(lineSetting, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 55, 50, -1));
+
+        setting.setBackground(new java.awt.Color(5, 10, 46));
+        setting.setLayout(new java.awt.BorderLayout());
+
+        btnSetting.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnSetting.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/settings_32px.png"))); // NOI18N
+        btnSetting.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnSettingMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnSettingMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnSettingMouseExited(evt);
+            }
+        });
+        setting.add(btnSetting, java.awt.BorderLayout.CENTER);
+
+        menuIcon.add(setting, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 55, 50, 50));
 
         menu.add(menuIcon, java.awt.BorderLayout.LINE_START);
 
@@ -116,53 +225,152 @@ public class MainMenu extends javax.swing.JFrame {
 
         getContentPane().add(dashboard, java.awt.BorderLayout.CENTER);
 
-        pack();
+        setSize(new java.awt.Dimension(800, 500));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    public void changeColour(JPanel hover, Color rand) {
+        hover.setBackground(rand);
+    }
+    
+    public void clickMenu(JPanel h1, JPanel h2, int numberBool) {
+        if (numberBool == 1) {
+            h1.setBackground(new Color(25, 29, 74));
+            h2.setBackground(new Color(5, 10, 46));
+        } else {
+            h1.setBackground(new Color(5, 10, 46));
+            h2.setBackground(new Color(25, 29, 74));
+        }
+    }
+    
+    public void hide_show(JPanel menuShowHide, boolean dashboard, JLabel button) {
+        if (dashboard == true) {
+            menuShowHide.setPreferredSize(new Dimension(50, menuShowHide.getHeight()));
+            changeImage(button, "/Icon/menu_32px.png");
+        } else {
+            menuShowHide.setPreferredSize(new Dimension(270, menuShowHide.getHeight()));
+            changeImage(button, "/Icon/back_32px.png");
+        }
+    }
+    
+    public void changeImage(JLabel button, String imgPath) {
+        ImageIcon img = new ImageIcon(getClass().getResource(imgPath));
+        button.setIcon(img);
+    }
+    
+    private void btnCloseMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCloseMouseEntered
+        changeColour(btnCloseArea, new Color(25, 29, 74));
+    }//GEN-LAST:event_btnCloseMouseEntered
+
+    private void btnCloseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCloseMouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_btnCloseMouseClicked
+
+    private void btnCloseMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCloseMouseExited
+        changeColour(btnCloseArea, new Color(5, 10, 46));
+    }//GEN-LAST:event_btnCloseMouseExited
+
+    private void btnMaxMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMaxMouseEntered
+        changeColour(btnMaxArea, new Color(25, 29, 74));
+    }//GEN-LAST:event_btnMaxMouseEntered
+
+    private void btnMaxMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMaxMouseExited
+        changeColour(btnMaxArea, new Color(5, 10, 46));
+    }//GEN-LAST:event_btnMaxMouseExited
+
+    private void btnMaxMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMaxMouseClicked
+        if (this.getExtendedState() != MainMenu.MAXIMIZED_BOTH) {
+            this.setExtendedState(MainMenu.MAXIMIZED_BOTH);
+        } else {
+            this.setExtendedState(MainMenu.NORMAL);
+        }
+    }//GEN-LAST:event_btnMaxMouseClicked
+
+    private void btnHideMenuMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHideMenuMouseEntered
+        changeColour(lineHideMenu, new Color(247, 78, 105));
+    }//GEN-LAST:event_btnHideMenuMouseEntered
+
+    private void btnHideMenuMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHideMenuMouseExited
+        changeColour(lineHideMenu, new Color(5, 10, 46));
+    }//GEN-LAST:event_btnHideMenuMouseExited
+
+    private void btnHideMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHideMenuMouseClicked
+        clickMenu(hideMenu, setting, 1);
+        if (boolVal == true) {
+            hide_show(menu, boolVal, btnHideMenu);
+            SwingUtilities.updateComponentTreeUI(this);
+            boolVal = false;
+        } else {
+            hide_show(menu, boolVal, btnHideMenu);
+            SwingUtilities.updateComponentTreeUI(this);
+            boolVal = true;
+        }
+    }//GEN-LAST:event_btnHideMenuMouseClicked
+
+    private void btnSettingMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSettingMouseEntered
+        changeColour(lineSetting, new Color(8, 177, 150));
+    }//GEN-LAST:event_btnSettingMouseEntered
+
+    private void btnSettingMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSettingMouseExited
+        changeColour(lineSetting, new Color(5, 10, 46));
+    }//GEN-LAST:event_btnSettingMouseExited
+
+    private void btnSettingMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSettingMouseClicked
+        clickMenu(setting, hideMenu, 1);
+    }//GEN-LAST:event_btnSettingMouseClicked
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MainMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MainMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MainMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MainMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new MainMenu().setVisible(true);
-            }
-        });
-    }
+//    public static void main(String args[]) {
+//        /* Set the Nimbus look and feel */
+//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+//         */
+//        try {
+//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+//                if ("Nimbus".equals(info.getName())) {
+//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+//                    break;
+//                }
+//            }
+//        } catch (ClassNotFoundException ex) {
+//            java.util.logging.Logger.getLogger(MainMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (InstantiationException ex) {
+//            java.util.logging.Logger.getLogger(MainMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (IllegalAccessException ex) {
+//            java.util.logging.Logger.getLogger(MainMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+//            java.util.logging.Logger.getLogger(MainMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        }
+//        //</editor-fold>
+//
+//        /* Create and display the form */
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new MainMenu().setVisible(true);
+//            }
+//        });
+//    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel btnClose;
-    private javax.swing.JPanel btnMax;
+    private javax.swing.JLabel btnClose;
+    private javax.swing.JPanel btnCloseArea;
+    private javax.swing.JLabel btnHideMenu;
+    private javax.swing.JLabel btnMax;
+    private javax.swing.JPanel btnMaxArea;
     private javax.swing.JPanel btnMin;
+    private javax.swing.JLabel btnSetting;
     private javax.swing.JPanel dashboard;
     private javax.swing.JPanel header;
+    private javax.swing.JPanel hideMenu;
     private javax.swing.JPanel iconMinMaxClose;
+    private javax.swing.JPanel lineHideMenu;
+    private javax.swing.JPanel lineSetting;
     private javax.swing.JPanel menu;
     private javax.swing.JPanel menuHide;
     private javax.swing.JPanel menuIcon;
+    private javax.swing.JPanel setting;
     // End of variables declaration//GEN-END:variables
 }
