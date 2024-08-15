@@ -26,18 +26,95 @@ public class MainMenu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        header = new javax.swing.JPanel();
+        iconMinMaxClose = new javax.swing.JPanel();
+        btnClose = new javax.swing.JPanel();
+        btnMax = new javax.swing.JPanel();
+        btnMin = new javax.swing.JPanel();
+        menu = new javax.swing.JPanel();
+        menuIcon = new javax.swing.JPanel();
+        menuHide = new javax.swing.JPanel();
+        dashboard = new javax.swing.JPanel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 800, Short.MAX_VALUE)
+        header.setBackground(new java.awt.Color(15, 10, 46));
+        header.setPreferredSize(new java.awt.Dimension(800, 50));
+        header.setLayout(new java.awt.BorderLayout());
+
+        iconMinMaxClose.setBackground(new java.awt.Color(15, 10, 46));
+        iconMinMaxClose.setPreferredSize(new java.awt.Dimension(150, 50));
+        iconMinMaxClose.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnClose.setBackground(new java.awt.Color(5, 10, 46));
+        btnClose.setPreferredSize(new java.awt.Dimension(50, 50));
+        btnClose.setLayout(new java.awt.BorderLayout());
+        iconMinMaxClose.add(btnClose, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 0, -1, -1));
+
+        btnMax.setBackground(new java.awt.Color(5, 10, 46));
+        btnMax.setPreferredSize(new java.awt.Dimension(50, 50));
+        btnMax.setLayout(new java.awt.BorderLayout());
+        iconMinMaxClose.add(btnMax, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 0, -1, -1));
+
+        btnMin.setBackground(new java.awt.Color(5, 10, 46));
+        btnMin.setPreferredSize(new java.awt.Dimension(50, 50));
+        btnMin.setLayout(new java.awt.BorderLayout());
+        iconMinMaxClose.add(btnMin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        header.add(iconMinMaxClose, java.awt.BorderLayout.LINE_END);
+
+        getContentPane().add(header, java.awt.BorderLayout.PAGE_START);
+
+        menu.setPreferredSize(new java.awt.Dimension(270, 450));
+        menu.setLayout(new java.awt.BorderLayout());
+
+        menuIcon.setBackground(new java.awt.Color(15, 19, 52));
+        menuIcon.setPreferredSize(new java.awt.Dimension(50, 450));
+
+        javax.swing.GroupLayout menuIconLayout = new javax.swing.GroupLayout(menuIcon);
+        menuIcon.setLayout(menuIconLayout);
+        menuIconLayout.setHorizontalGroup(
+            menuIconLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 50, Short.MAX_VALUE)
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 500, Short.MAX_VALUE)
+        menuIconLayout.setVerticalGroup(
+            menuIconLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 450, Short.MAX_VALUE)
         );
+
+        menu.add(menuIcon, java.awt.BorderLayout.LINE_START);
+
+        menuHide.setBackground(new java.awt.Color(25, 29, 74));
+
+        javax.swing.GroupLayout menuHideLayout = new javax.swing.GroupLayout(menuHide);
+        menuHide.setLayout(menuHideLayout);
+        menuHideLayout.setHorizontalGroup(
+            menuHideLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 220, Short.MAX_VALUE)
+        );
+        menuHideLayout.setVerticalGroup(
+            menuHideLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 450, Short.MAX_VALUE)
+        );
+
+        menu.add(menuHide, java.awt.BorderLayout.CENTER);
+
+        getContentPane().add(menu, java.awt.BorderLayout.LINE_START);
+
+        dashboard.setBackground(new java.awt.Color(73, 128, 242));
+
+        javax.swing.GroupLayout dashboardLayout = new javax.swing.GroupLayout(dashboard);
+        dashboard.setLayout(dashboardLayout);
+        dashboardLayout.setHorizontalGroup(
+            dashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 530, Short.MAX_VALUE)
+        );
+        dashboardLayout.setVerticalGroup(
+            dashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 450, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(dashboard, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -78,5 +155,14 @@ public class MainMenu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel btnClose;
+    private javax.swing.JPanel btnMax;
+    private javax.swing.JPanel btnMin;
+    private javax.swing.JPanel dashboard;
+    private javax.swing.JPanel header;
+    private javax.swing.JPanel iconMinMaxClose;
+    private javax.swing.JPanel menu;
+    private javax.swing.JPanel menuHide;
+    private javax.swing.JPanel menuIcon;
     // End of variables declaration//GEN-END:variables
 }
